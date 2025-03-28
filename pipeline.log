@@ -1,0 +1,18 @@
+2025-03-28 15:41:23,531 - __main__ - INFO - Starting pipeline execution
+2025-03-28 15:41:23,625 - __main__ - WARNING - PostgreSQL connection attempt 1 failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "your_user" does not exist
+
+2025-03-28 15:41:25,634 - __main__ - WARNING - PostgreSQL connection attempt 2 failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "your_user" does not exist
+
+2025-03-28 15:41:27,640 - __main__ - WARNING - PostgreSQL connection attempt 3 failed: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "your_user" does not exist
+
+2025-03-28 15:41:29,646 - __main__ - CRITICAL - Pipeline failed: Failed to connect to PostgreSQL after 3 attempts
+Traceback (most recent call last):
+  File "/Users/ismailmohamed/Downloads/amazon_data_pipeline/pipeline.py", line 124, in <module>
+    initialize_database()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/ismailmohamed/Downloads/amazon_data_pipeline/pipeline.py", line 44, in initialize_database
+    with connect_postgres() as conn:
+         ~~~~~~~~~~~~~~~~^^
+  File "/Users/ismailmohamed/Downloads/amazon_data_pipeline/pipeline.py", line 41, in connect_postgres
+    raise ConnectionError("Failed to connect to PostgreSQL after 3 attempts")
+ConnectionError: Failed to connect to PostgreSQL after 3 attempts

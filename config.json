@@ -1,0 +1,14 @@
+{
+    "aws_access_key": "your-access-key",
+    "aws_secret_key": "your-secret-key",
+    "s3_bucket": "amazon-data-pipeline",
+    "redshift_cluster": "my-redshift-cluster",
+    "kafka_bootstrap_servers": "localhost:9092",
+    "database_config": {
+        "dbname": "logs_db",
+        "user": "user",
+        "password": "password",
+        "host": "localhost",
+        "port": "5432"
+    }
+}
